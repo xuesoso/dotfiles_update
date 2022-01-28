@@ -8,7 +8,7 @@ case $1 in
 	for i in "${dirs[@]}"
 	do
 	    dest="${SCRIPT_DIR}/${i#*/*/*/}"
-	    echo ${i}
+	    echo "${i} -> ${dest}"
 	    if [ -d $i ] || [ -f $i ]
 	    then
 		mkdir -p $(dirname "$dest")
@@ -21,7 +21,7 @@ case $1 in
 	for i in "${dirs[@]}"
 	do
 	    dest="${SCRIPT_DIR}/${i#*/*/*/}"
-	    echo ${i}
+	    echo "${dest} -> ${i}"
 	    if [ -d $dest ] || [ -f $dest ]
 	    then
 		mkdir -p $(dirname "$i")
@@ -33,10 +33,13 @@ case $1 in
 	echo "Clearing files from ${SCRIPT_DIR}"
 	for i in "${dirs[@]}"
 	do
-	    dest="${SCRIPT_DIR}/${i#*/*/*/}"
-	    echo ${i}
+	    directory=${i#*/*/*/}
+	    split=(${directory//// })
+	    rootdir=${split[0]}
+	    dest="${SCRIPT_DIR}/$rootdir"
 	    if [ -d $dest ] || [ -f $dest ]
 	    then
+		echo ${dest}
 		rm -rf $dest
 	    fi
 	done

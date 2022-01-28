@@ -6,4 +6,5 @@
 /home/ubuntu/.inputrc
 /home/ubuntu/.jupyter
 /home/ubuntu/.local/share/jupyter
+/home/ubuntu/.local/share/nvim
 /home/ubuntu/.vim
