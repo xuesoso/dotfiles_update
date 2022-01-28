@@ -1,5 +1,6 @@
 # dotfiles_update
 A simple bash script to update dotfiles
+
 Usage
 ----------------
 Edit config file, add absolute path (no environment variable, no "~") of each config directory or file that you want to synchronize.
