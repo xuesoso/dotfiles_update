@@ -1,0 +1,6 @@
+runtime/
+*_cache/
+/cache/
+swap/
+*credential*
+*.log
